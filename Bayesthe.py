@@ -21,3 +21,35 @@ def drug_user(prob_th=0.8,
 print("Anjali Nimje")
 p=drug_user(prob_th=0.5,sensitivity=0.97,specificity=0.95,prevelence=0.005)
 print("probability of test-taker being a drug user is:",round(p,3))
+
+
+
+
+
+#two
+
+def bayes_theorem(prior_prob,likelihood,evidence):
+
+ posterior_prob=(likelihood*prior_prob)/evidence
+
+ return posterior_prob
+
+if __name__=="__main__":
+
+ prior_prob=0.01
+
+ likelihood_cancer=0.95
+
+ likelihood_no_cancer=0.10
+
+ evidence=(likelihood_cancer*prior_prob)+(likelihood_no_cancer*(1-prior_prob))
+
+ posterior_prob=bayes_theorem(prior_prob,likelihood_cancer,evidence)
+
+ print("Prior Probability of Cancer:",likelihood_cancer)
+
+ print("Likelihood of Positive Test Given No Cancer:",round(posterior_prob,2))
+
+
+
+
